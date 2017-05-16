@@ -1,0 +1,23 @@
+{
+  "name": "people",
+  "version": "1.0.0",
+  "description": "Node.js microservice to provide a REST API for the People resource.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Bruno Fajardo <bsfajardo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.1",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jsonschema": "^1.1.1",
+    "mongodb": "^2.2.26"
+  },
+  "engines": {
+    "node": "^6.10.3",
+    "npm": "^3.10.10"
+  }
+}

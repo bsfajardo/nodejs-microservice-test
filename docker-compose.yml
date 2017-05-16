@@ -1,0 +1,29 @@
+version: '2'
+services:
+  message_queue:
+    image: rabbitmq:latest
+    container_name: message_queue
+  elasticsearch:
+    image: elasticsearch:5.4.0
+    container_name: elasticsearch
+    volumes:
+      - ./services/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+  people:
+    image: bsfajardo/people
+    container_name: people
+    build:
+      context: ./services/people
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - message_queue
+  elasticsearch_bridge:
+    image: bsfajardo/elasticsearch-bridge
+    container_name: elasticsearch_bridge
+    build:
+      context: ./services/elasticsearch-bridge
+      dockerfile: Dockerfile
+    depends_on:
+      - message_queue
+      - elasticsearch

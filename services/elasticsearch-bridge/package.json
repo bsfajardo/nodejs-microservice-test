@@ -1,0 +1,20 @@
+{
+  "name": "elasticsearch-bridge",
+  "version": "1.0.0",
+  "description": "Node.js microservice to consume a RabbitMQ queue and index documents in an ElasticSearch cluster.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Bruno Fajardo <bsfajardo@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.1",
+    "elasticsearch": "^13.0.1"
+  },
+  "engines": {
+    "node": "^6.10.3",
+    "npm": "^3.10.10"
+  }
+}
